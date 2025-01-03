@@ -9,15 +9,19 @@ namespace MvcCv.Models.Entity
         public int ID { get; set; }    
 
         [StringLength(100)]
-        public string Baslik { get; set; }    
+        public string Ad { get; set; }    
 
         [StringLength(100)]
-        public string AltBaslik { get; set; }    
+        public string Soyad { get; set; }    
 
-        public string Aciklama { get; set; }   
+        public string Adres { get; set; }   
 
         [StringLength(100)]
-        public string Tarih { get; set; }
+        public string Telefon { get; set; }
+        [StringLength(100)]
+        public string Mail { get; set; }
+        public string Aciklama { get; set; }
+
         public string Resim { get; set; }
     }
 
