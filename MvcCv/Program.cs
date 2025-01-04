@@ -1,10 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using MvcCv.Data;
+using MvcCv.Repositories;
 using System;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<DeneyimRepository>();
 
 
 // Add services to the container.

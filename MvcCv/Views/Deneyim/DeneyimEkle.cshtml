@@ -1,0 +1,32 @@
+﻿@{
+    ViewData["Title"] = "Deneyim Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1 class="text-center mb-4">Deneyim Ekle</h1>
+
+<form class="form-group" method="post">
+    <div class="form-group mb-3">
+        <label for="Baslik" class="form-label">Başlık</label>
+        <input type="text" id="Baslik" name="Baslik" class="form-control" placeholder="Başlığı Yazınız" required />
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="AltBaslik" class="form-label">Alt Başlık</label>
+        <input type="text" id="AltBaslik" name="AltBaslik" class="form-control" placeholder="Açıklama" required />
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="Tarih" class="form-label">Çalışma Tarihi</label>
+        <input type="text" id="Tarih" name="Tarih" class="form-control" placeholder="Çalışma Tarihini Yazınız" required />
+    </div>
+
+    <div class="form-group mb-3">
+        <label for="Aciklama" class="form-label">Açıklama</label>
+        <textarea id="Aciklama" name="Aciklama" class="form-control" placeholder="Açıklamanızı Yazınız" rows="4" required></textarea>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+    </div>
+</form>
