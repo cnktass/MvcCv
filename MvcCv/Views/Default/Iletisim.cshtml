@@ -1,0 +1,27 @@
+﻿@model MvcCv.Models.Entity.TblIletisim
+
+<div class="resume-section-content">
+    <h2 class="mb-5">İletişim</h2>
+
+    @if (ViewBag.Message != null)
+    {
+        <div class="alert alert-info">@ViewBag.Message</div>
+    }
+
+    <form method="post" asp-action="Iletisim" asp-controller="Default">
+        <label>Ad Soyad</label>
+        <input type="text" class="form-control" name="AdSoyad" required />
+
+        <label>Mail</label>
+        <input type="email" class="form-control" name="Mail" required />
+
+        <label>Konu</label>
+        <input type="text" class="form-control" name="Konu" required />
+
+        <label>Mesaj</label>
+        <textarea class="form-control" name="Mesaj" required></textarea>
+        <br />
+
+        <button type="submit" class="btn btn-info">Mesaj Gönder</button>
+    </form>
+</div>
