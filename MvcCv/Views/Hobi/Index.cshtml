@@ -1,0 +1,41 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblHobilerim>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="display-5 text-primary">🛠️ Hobilerim</h1>
+        <a href="/Hobi/Ekle" class="btn btn-success">➕ Hobi Ekle</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover table-bordered shadow-sm rounded">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>Aciklama1</th>
+                    <th>Aciklama2</th>
+                    <th class="text-center">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.Aciklama1</td>
+                        <td>@item.Aciklama2</td>
+                        <td class="text-center">
+                            <a href="/Hobi/Duzenle/@item.ID" class="btn btn-sm btn-primary me-1">✏️ Düzenle</a>
+                            <a href="/Hobi/Sil/@item.ID" class="btn btn-sm btn-danger" onclick="return confirm('Bu yeteneği silmek istediğinize emin misiniz?')">🗑️ Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

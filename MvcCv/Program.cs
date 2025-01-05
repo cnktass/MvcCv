@@ -9,7 +9,10 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
 builder.Services.AddScoped<DeneyimRepository>();
 builder.Services.AddScoped<YetenekRepository>();
 builder.Services.AddScoped<EgitimRepository>();
-
+builder.Services.AddScoped<SertifikaRepository>();
+builder.Services.AddScoped<IletisimRepository>();
+builder.Services.AddScoped<HobilerimRepository>();
+builder.Services.AddScoped<HakkimdaRepository>();
 
 
 // Add services to the container.

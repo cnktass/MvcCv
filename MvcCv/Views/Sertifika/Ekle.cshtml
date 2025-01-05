@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg rounded p-4">
+        <h1 class="text-center text-primary mb-4">➕ Yeni Sertifika / Proje Ekle</h1>
+        <form method="post">
+            <div class="form-group mb-3">
+                <label for="Aciklama" class="form-label"> Başlık</label>
+                <input type="text" id="Yetenek" name="Aciklama" class="form-control" placeholder="Yeni Sertifika / Proje girin" required />
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary w-50">💾 Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>

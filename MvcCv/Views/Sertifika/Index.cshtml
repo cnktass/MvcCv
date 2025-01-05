@@ -1,5 +1,5 @@
 ﻿@using MvcCv.Models.Entity
-@model List<TblHakkimda>
+@model List<TblSertifikalarim>
 @{
     ViewData["Title"] = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
@@ -7,8 +7,8 @@
 
 <div class="container mt-4">
     <div class="d-flex justify-content-between align-items-center mb-3">
-        <h1 class="display-5 text-primary">🛠️ Hakkimda</h1>
-        <a href="/Hakkimda/Ekle" class="btn btn-success">➕ Bilgilerimi Ekle</a>
+        <h1 class="display-5 text-primary">🛠️ Yeteneklerim</h1>
+        <a href="/Sertifika/Ekle" class="btn btn-success">➕ Ekle</a>
     </div>
 
     <div class="table-responsive">
@@ -16,12 +16,7 @@
             <thead class="table-dark">
                 <tr>
                     <th>#</th>
-                    <th>Ad</th>
-                    <th>Soyad</th>
-                    <th>Mail</th>
-                    <th>Aciklama</th>
-                    <th>Telefon</th>
-                    <th>Resim Url</th>
+                    <th>Sertifika/Proje</th>
                     <th class="text-center">İşlemler</th>
                 </tr>
             </thead>
@@ -30,20 +25,15 @@
                 {
                     <tr>
                         <td>@item.ID</td>
-                        <td>@item.Ad</td>
-                        <td>@item.Soyad</td>
-                        <td>@item.Mail</td>
                         <td>@item.Aciklama</td>
-                        <td>@item.Telefon</td>
-                        <td>@item.Resim</td>
                         <td class="text-center">
-                            <a href="/Hakkimda/Duzenle/@item.ID" class="btn btn-sm btn-primary me-1">✏️ Düzenle</a>
-                            <a href="/Hakkimda/Sil/@item.ID" class="btn btn-sm btn-danger" onclick="return confirm('Bu yeteneği silmek istediğinize emin misiniz?')">🗑️ Sil</a>
+                            <a href="/Sertifika/Sil/@item.ID" class="btn btn-sm btn-danger" onclick="return confirm('Bu yeteneği silmek istediğinize emin misiniz?')">🗑️ Sil</a>
                         </td>
                     </tr>
                 }
             </tbody>
         </table>
     </div>
+
 </div>
 

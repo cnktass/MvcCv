@@ -1,0 +1,59 @@
+﻿@model MvcCv.Models.Entity.TblHakkimda
+@{
+    ViewData["Title"] = "Duzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg rounded p-4">
+        <h1 class="text-center text-primary mb-4">📚 Hakkimda Düzenle</h1>
+        <form class="form-group" method="post" enctype="multipart/form-data">
+
+            <div class="form-group mb-3">
+                <label asp-for="Ad" class="form-label fw-bold">Ad</label>
+                <input asp-for="Ad" class="form-control" placeholder= "Ad giriniz" />
+                <span asp-validation-for="Ad" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Soyad" class="form-label fw-bold">Soyad</label>
+                <input asp-for="Soyad" class="form-control" placeholder="Soyad girin" />
+                <span asp-validation-for="Soyad" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Mail" class="form-label fw-bold">Mail</label>
+                <input asp-for="Mail" class="form-control" placeholder="Mail girin" />
+                <span asp-validation-for="Mail" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Telefon" class="form-label fw-bold">Telefon</label>
+                <input asp-for="Telefon" class="form-control" placeholder="Telefon No girin" />
+                <span asp-validation-for="Telefon" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Adres" class="form-label">Adres</label>
+                <input asp-for="Adres" class="form-control" />
+                <span asp-validation-for="Adres" class="text-danger">"Adres giriniz"</span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Aciklama" class="form-label">Adres</label>
+                <input asp-for="Aciklama" class="form-control" />
+                <span asp-validation-for="Aciklama" class="text-danger">"Aciklama giriniz"</span>
+            </div>
+            <div class="form-group mb-3">
+                <label asp-for="Resim" class="form-label">Resim</label>
+                <input asp-for="Resim" class="form-control" />
+                <span asp-validation-for="Resim" class="text-danger">"Resim URL giriniz"</span>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary w-50">💾 Güncelle</button>
+            </div>
+        </form>
+    </div>
+</div>
+

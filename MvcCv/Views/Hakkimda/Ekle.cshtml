@@ -1,0 +1,48 @@
+﻿
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container mt-4">
+    <div class="card shadow-lg rounded p-4">
+        <h1 class="text-center text-primary mb-4">➕ Bilgiler Ekle</h1>
+        <form method="post">
+            <div class="form-group mb-3">
+                <label for="Ad" class="form-label">Ad</label>
+                <input type="text" id="Ad" name="Ad" class="form-control" placeholder="" required />
+            </div>
+            <div class="form-group mb-3">
+                <label for="Soyad" class="form-label">Soyad</label>
+                <input type="text" id="Soyad" name="Soyad" class="form-control" placeholder="" required />
+            </div>
+            <div class="form-group mb-3">
+                <label for="Mail" class="form-label">Mail</label>
+                <input type="text" id="Mail" name="Mail" class="form-control" placeholder="" required />
+            </div>
+            <div class="form-group mb-3">
+                <label for="Telefon" class="form-label">Telefon</label>
+                <input type="text" id="Telefon" name="Telefon" class="form-control" placeholder="" required />
+            </div>
+            <div class="form-group mb-3">
+                <label for="Adres" class="form-label">Adres</label>
+                <input type="text" id="Adres" name="Adres" class="form-control" placeholder="" required />
+            </div>
+            <div class="form-group mb-3">
+                <label for="Aciklama" class="form-label">Aciklama</label>
+                <input type="text" id="Aciklama" name="Aciklama" class="form-control" placeholder="" required />
+            </div>
+            <div class="form-group mb-3">
+                <label for="Resim" class="form-label">Resim</label>
+                <input type="text" id="Resim" name="Resim" class="form-control" placeholder="" required />
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary w-50">💾 Kaydet</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+

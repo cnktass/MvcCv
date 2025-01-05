@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="display-5 text-primary">📚 Iletisim Listesi</h1>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover shadow-sm rounded">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Adi Soyadi</th>
+                    <th>Mail Adresi</th>
+                    <th>Konu</th>
+                    <th>Mesaj</th>
+                    <th>Yazim Tarihi</th>
+                    <th class="text-center">İşlemler</th>
+
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.AdSoyad</td>
+                        <td>@item.Mail</td>
+                        <td>@item.Konu</td>
+                        <td>@item.Mesaj</td>
+                        <td>@item.Tarih</td>
+                        <td class="text-center">
+                            <a href="/Iletisim/Sil/@item.ID" class="btn btn-sm btn-danger" onclick="return confirm('Bu deneyimi silmek istediğinize emin misiniz?')">🗑️ Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
