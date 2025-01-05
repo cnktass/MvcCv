@@ -8,6 +8,8 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 builder.Services.AddScoped<DeneyimRepository>();
 builder.Services.AddScoped<YetenekRepository>();
+builder.Services.AddScoped<EgitimRepository>();
+
 
 
 // Add services to the container.

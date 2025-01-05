@@ -1,0 +1,48 @@
+﻿@using MvcCv.Models.Entity
+@model List<TblEgitimlerim>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="display-5 text-primary">📚 Egitim Gecmisim</h1>
+        <a href="/Egitim/EgitimEkle" class="btn btn-success">➕ Yeni Egitim Ekle</a>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-hover shadow-sm rounded">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Başlık</th>
+                    <th>Alt Başlık1</th>
+                    <th>Alt Başlık2</th>
+                    <th>GNO</th>
+                    <th>Tarih</th>
+                    <th class="text-center">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.Baslik</td>
+                        <td>@item.AltBaslik1</td>
+                        <td>@item.AltBaslik2</td>
+                        <td>@item.GNO</td>
+                        <td>@item.Tarih</td>
+                        <td class="text-center">
+                            <a href="/Egitim/Duzenle/@item.ID" class="btn btn-sm btn-primary me-1">✏️ Düzenle</a>
+                            <a href="/Egitim/Sil/@item.ID" class="btn btn-sm btn-danger" onclick="return confirm('Bu deneyimi silmek istediğinize emin misiniz?')">🗑️ Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+

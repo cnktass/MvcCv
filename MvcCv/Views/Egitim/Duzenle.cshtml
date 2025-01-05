@@ -1,0 +1,47 @@
+﻿@model MvcCv.Models.Entity.TblEgitimlerim
+@{
+    ViewData["Title"] = "Eğitim Düzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container mt-4">
+    <div class="card shadow-lg rounded p-4">
+        <h1 class="text-center text-primary mb-4">📚 Eğitim Düzenle</h1>
+        <form class="form-group" method="post" enctype="multipart/form-data">
+
+            <div class="form-group mb-3">
+                <label asp-for="Baslik" class="form-label fw-bold">Başlık</label>
+                <input asp-for="Baslik" class="form-control" placeholder="Başlık girin" />
+                <span asp-validation-for="Baslik" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="AltBaslik1" class="form-label fw-bold">Alt Başlık 1</label>
+                <input asp-for="AltBaslik1" class="form-control" placeholder="Alt başlık 1 girin" />
+                <span asp-validation-for="AltBaslik1" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="AltBaslik2" class="form-label fw-bold">Alt Başlık 2</label>
+                <input asp-for="AltBaslik2" class="form-control" placeholder="Alt başlık 2 girin" />
+                <span asp-validation-for="AltBaslik2" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="GNO" class="form-label fw-bold">GNO</label>
+                <input asp-for="GNO" class="form-control" placeholder="Genel not ortalamasını girin" />
+                <span asp-validation-for="GNO" class="text-danger"></span>
+            </div>
+
+            <div class="form-group mb-3">
+                <label asp-for="Tarih" class="form-label"></label>
+                <input asp-for="Tarih" class="form-control" />
+                <span asp-validation-for="Tarih" class="text-danger"></span>
+            </div>
+
+            <div class="text-center mt-4">
+                <button type="submit" class="btn btn-primary w-50">💾 Güncelle</button>
+            </div>
+        </form>
+    </div>
+</div>
