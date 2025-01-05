@@ -14,6 +14,14 @@ builder.Services.AddScoped<IletisimRepository>();
 builder.Services.AddScoped<HobilerimRepository>();
 builder.Services.AddScoped<HakkimdaRepository>();
 
+builder.Services.AddDistributedMemoryCache(); // Cache kullanmak için
+builder.Services.AddSession(options =>
+{
+	options.IdleTimeout = TimeSpan.FromMinutes(30);  // Oturum süresi
+	options.Cookie.HttpOnly = true;  // Sadece HTTP üzerinden eriþim
+	options.Cookie.IsEssential = true;  // Çerezlerin gerekli olduðunu belirt
+});
+
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -32,6 +40,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthorization();
 
