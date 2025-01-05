@@ -42,6 +42,23 @@ namespace MvcCv.Controllers
             _deneyimRepository.Delete(t);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public IActionResult Duzenle(int id)
+        {
+            TblDeneyimlerim t = _deneyimRepository.TGet(id);
+            return View(t);
+        }
+        public IActionResult Duzenle(TblDeneyimlerim p)
+        {
+            TblDeneyimlerim t = _deneyimRepository.TGet(p.ID);
+            t.Baslik = p.Baslik;
+            t.AltBaslik = p.AltBaslik;
+            t.Tarih = p.Tarih;
+            t.Aciklama = p.Aciklama;
+            _deneyimRepository.TUpdate(t);
+            return RedirectToAction("Index");
+        }
+
 
 
     }

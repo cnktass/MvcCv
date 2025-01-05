@@ -1,37 +1,44 @@
 ﻿@using MvcCv.Models.Entity
 @model List<TblDeneyimlerim>
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Deneyim Listesi";
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
-<br />
-<h1>Deneyim Listesi</h1>
 
-<table class="table table-bordered">
-    <tr>
-        <th>ID</th>
-        <th>Baslik</th>
-        <th>Alt Baslik</th>
-        <th>Aciklama</th>
-        <th>Tarih</th>
-        <th>Sil</th>
-        <th>Duzenle</th>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h1 class="display-5 text-primary">📚 Deneyim Listesi</h1>
+        <a href="/Deneyim/DeneyimEkle" class="btn btn-success">➕ Yeni Deneyim Ekle</a>
+    </div>
 
-    </tr>
-
-    @foreach(var item in Model)
-    {
-
-    <tr>
-        <td>@item.ID</td>
-        <td>@item.Baslik</td>
-        <td>@item.AltBaslik</td>
-        <td>@item.Aciklama</td>
-        <td>@item.Tarih</td>
-        <td><a href="/Deneyim/Sil/@item.ID" class="btn btn-danger">Sil</a></td>
-        <td><a href="#" class="btn btn-primary" >Duzenle</a></td>
-    </tr>
-
-    }
-</table>
-<a href="/Deneyim/DeneyimEkle" class="btn btn-primary">Yeni Deneyim Ekle</a>
+    <div class="table-responsive">
+        <table class="table table-hover shadow-sm rounded">
+            <thead class="table-dark">
+                <tr>
+                    <th>ID</th>
+                    <th>Başlık</th>
+                    <th>Alt Başlık</th>
+                    <th>Açıklama</th>
+                    <th>Tarih</th>
+                    <th class="text-center">İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.ID</td>
+                        <td>@item.Baslik</td>
+                        <td>@item.AltBaslik</td>
+                        <td>@item.Aciklama</td>
+                        <td>@item.Tarih</td>
+                        <td class="text-center">
+                            <a href="/Deneyim/Duzenle/@item.ID" class="btn btn-sm btn-primary me-1">✏️ Düzenle</a>
+                            <a href="/Deneyim/Sil/@item.ID" class="btn btn-sm btn-danger" onclick="return confirm('Bu deneyimi silmek istediğinize emin misiniz?')">🗑️ Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿@model MvcCv.Models.Entity.TblDeneyimlerim
+@{
+    ViewData["Title"] = "Duzenle";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h1>Duzenle</h1>
+
+<form class="form-group" method="post" enctype="multipart/form-data">
+    <div class="form-group mb-3">
+        <label asp-for="Baslik" class="form-label"></label>
+        <input asp-for="Baslik" class="form-control" />
+        <span asp-validation-for="Baslik" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="AltBaslik" class="form-label"></label>
+        <input asp-for="AltBaslik" class="form-control" />
+        <span asp-validation-for="AltBaslik" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Baslik" class="form-label"></label>
+        <input asp-for="Baslik" class="form-control" />
+        <span asp-validation-for="Baslik" class="text-danger"></span>
+    </div>
+
+    <div class="form-group mb-3">
+        <label asp-for="Tarih" class="form-label"></label>
+        <input asp-for="Tarih" class="form-control" />
+        <span asp-validation-for="Tarih" class="text-danger"></span>
+    </div>
+    <div class="form-group mb-3">
+        <label asp-for="Aciklama" class="form-label"></label>
+        <input asp-for="Aciklama" class="form-control" />
+        <span asp-validation-for="Aciklama" class="text-danger"></span>
+    </div>
+
+    <div class="text-center">
+        <button type="submit" class="btn btn-primary">Guncelle</button>
+    </div>
+</form>
