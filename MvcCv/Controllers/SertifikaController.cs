@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MvcCv.Models.Entity;
 using MvcCv.Repositories;
 
 namespace MvcCv.Controllers
 {
-    public class SertifikaController : Controller
+	[Authorize]
+	public class SertifikaController : Controller
     {
         private readonly SertifikaRepository _sertifikaRepository;
         public SertifikaController(SertifikaRepository sertifikaRepository)

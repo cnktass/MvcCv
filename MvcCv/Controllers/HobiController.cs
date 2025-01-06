@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MvcCv.Models.Entity;
 using MvcCv.Repositories;
 
 namespace MvcCv.Controllers
 {
-    public class HobiController : Controller
+	[Authorize]
+	public class HobiController : Controller
     {
         private readonly HobilerimRepository _hobilerimRepository;
         public HobiController(HobilerimRepository hobilerimRepository)

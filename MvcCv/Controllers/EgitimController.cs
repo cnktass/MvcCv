@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MvcCv.Models.Entity;
 using MvcCv.Repositories;
 
 namespace MvcCv.Controllers
 {
-    public class EgitimController : Controller
+	[Authorize]
+	public class EgitimController : Controller
     {
         private readonly EgitimRepository _egitimRepository;
         public EgitimController(EgitimRepository egitimRepository)

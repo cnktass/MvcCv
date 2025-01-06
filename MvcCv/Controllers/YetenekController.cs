@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MvcCv.Models.Entity;
 using MvcCv.Repositories;
 
 namespace MvcCv.Controllers
 {
-    public class YetenekController : Controller
+	[Authorize]
+	public class YetenekController : Controller
     {
         private readonly YetenekRepository  _yetenekRepository;
         public YetenekController(YetenekRepository yetenekRepository)

@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MvcCv.Models.Entity;
 using MvcCv.Repositories;
 
 namespace MvcCv.Controllers
 {
-    public class IletisimController : Controller
+	[Authorize]
+	public class IletisimController : Controller
     {
         private readonly IletisimRepository _iletisimRepository;
         public IletisimController(IletisimRepository iletisimrepository)

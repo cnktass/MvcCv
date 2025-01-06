@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MvcCv.Models.Entity;
 using MvcCv.Repositories;
 
 namespace MvcCv.Controllers
 {
-    public class HakkimdaController : Controller
+	[Authorize]
+	public class HakkimdaController : Controller
     {
         private readonly HakkimdaRepository _hakkimdaRepository;
         public HakkimdaController(HakkimdaRepository hakkimdaRepository)

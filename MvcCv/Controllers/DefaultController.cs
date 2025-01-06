@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using MvcCv.Data;
 using MvcCv.Models.Entity;
 
 namespace MvcCv.Controllers
 {
-    public class DefaultController : Controller
+	[AllowAnonymous]
+	public class DefaultController : Controller
     {
         private readonly ApplicationDbContext _context;
         public DefaultController(ApplicationDbContext context)

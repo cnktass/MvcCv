@@ -5,6 +5,7 @@ namespace MvcCv.Data
 {
     public class ApplicationDbContext : DbContext
     {
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -18,6 +19,14 @@ namespace MvcCv.Data
         public DbSet<TblIletisim> Iletisim { get; set; }
         public DbSet<TblSertifikalarim> Sertifikalarim { get; set; }
         public DbSet<TblYeteneklerim> Yeteneklerim { get; set; }
-    }
+
+		public override int SaveChanges()
+		{
+
+			return base.SaveChanges();
+		}
+
+	}
+
 
 }
